@@ -5,7 +5,7 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
-command_list = ['show ip int brief','show version','show ip route']
+command_list = ['show ip int brief', 'show version', 'show ip route']
 def show_command_test(task):
     for cmd in command_list:
         task.run(task=send_commands, commands=command_list)
