@@ -14,4 +14,5 @@ def pull_structured_data(task):
 
 result = nr.run(pull_structured_data)
 # print_result(result)
+# nr.inventory.hosts[]
 ipdb.set_trace()
