@@ -5,7 +5,7 @@ from nornir_utils.plugins.functions import print_result
 nr = InitNornir(config_file="config.yaml")
 
 def yangsuite_test(task):
-    task.run(task=netconf_get_config, source="running", filter_="/native/hostname", filter_type="xpath")
+    task.run(task=netconf_get_config, source="running", filter_="/native/interface/GigabitEthernet", filter_type="xpath")
     
     
 result = nr.run(task=yangsuite_test)
