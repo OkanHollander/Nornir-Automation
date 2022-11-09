@@ -17,7 +17,7 @@ def restconf_test(task):
                             headers=headers, 
                             auth=(f"{task.host.username}", f"{task.host.password}"), 
                             verify=False)
-    task.host["facts"] = response.text
+    task.host["facts"] = response.json()
     return Result(host=task.host, result=response.text)
     
 result = nr.run(restconf_test)
