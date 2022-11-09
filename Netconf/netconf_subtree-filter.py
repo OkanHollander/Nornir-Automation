@@ -4,6 +4,7 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
+# pyang -f sample-xml-skeleton ietf-interfaces.yang
 filter = """
 <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
 </interfaces>
