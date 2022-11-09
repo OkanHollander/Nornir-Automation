@@ -6,7 +6,10 @@ import xmltodict
 nr = InitNornir(config_file="config.yaml")
 
 def get_yang(task):
-    task.run(task=netconf_get, filter_type="xpath", filter_="interfaces-state//statistics[in-unicast-pkts > 0]")
+    result = task.run(task=netconf_get, filter_type="xpath", filter_="interfaces-state//statistics[in-unicast-pkts > 0]")
+    output = result.result
+    dict_result = xmltodict.parse(output)
+    print(dict_result)
 
 result = nr.run(task=get_yang)
-print_result(result)
+# print_result(result)
