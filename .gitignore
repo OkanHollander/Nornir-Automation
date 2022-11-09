@@ -1,3 +1,4 @@
 *.yml
 *.yaml
 *.log
+__pycache__
