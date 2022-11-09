@@ -16,6 +16,7 @@ def restconf_test(task):
                             headers=headers, 
                             auth=(f"{task.host.username}", f"{task.host.password}"), 
                             verify=False)
-    print(response.text)
+    return Result(host=task.host, result=response.text)
     
-nr.run(restconf_test)
+result = nr.run(restconf_test)
+print_result(result)
