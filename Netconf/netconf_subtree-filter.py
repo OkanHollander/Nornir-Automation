@@ -6,8 +6,12 @@ nr = InitNornir(config_file="config.yaml")
 
 # pyang -f sample-xml-skeleton ietf-interfaces.yang
 filter = """
-<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-</interfaces>
+  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+      <name/>
+      <description/>
+    </interface>
+  </interfaces>
 """
 
 
