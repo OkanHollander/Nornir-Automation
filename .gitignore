@@ -1,8 +1,5 @@
 *.yml
-hosts.yaml
-default.yaml
-groups.yaml
-config.yaml
+*.yaml
 *.log
 __pycache__
 backups/
