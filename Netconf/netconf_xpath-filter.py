@@ -5,7 +5,10 @@ from nornir_utils.plugins.functions import print_result
 nr = InitNornir(config_file="config.yaml")
 
 def get_yang(task):
-    task.run(task=netconf_get, filter_type="xpath", filter_="interfaces-state//statistics[in-unicast-pkts > 0]")   # filter_="//filter" for recursive filtering
+    task.run(task=netconf_get, 
+             filter_type="xpath", 
+             filter_="/native/interface/GigabitEthernet[name = 2]")
+             #filter_="interfaces-state//statistics[in-unicast-pkts > 0]")   # filter_="//filter" for recursive lookup
 
 results = nr.run(task=get_yang)   
 print_result(results)
