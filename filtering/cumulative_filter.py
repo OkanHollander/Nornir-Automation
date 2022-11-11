@@ -7,6 +7,6 @@ nr = InitNornir(config_file="config.yaml")
 def test_task(task):
     task.run(task=send_command, command="show ip int brief")
 
-targets = nr.filter(country="usa")
+targets = nr.filter(country="usa", region="east")
 results = targets.run(task=test_task)
 print_result(results)
